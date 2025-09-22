@@ -11,7 +11,7 @@ int main() {
     int counter = 0;
 
     if((A*A*A*A*A-A-0.2)*(B*B*B*B*B-B-0.2)>=0){
-        cout<<"N.R."<<'\n';
+        cout<<"no roots"<<'\n';
         return 1;
     }
     while((B-A)>=e){
