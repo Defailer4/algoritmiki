@@ -7,27 +7,24 @@ int main() {
     double B = 2; 
     
     double eps = 0.0001;
-    double C;
+    double D;
     int counter = 0;
 
-    double fA = A*A*A*A*A - A - 0.2;
-    double fB = B*B*B*B*B - B - 0.2;
-    
     //X*X*X*X*X-X-0.2
     
     if((A*A*A*A*A-A-0.2)*(B*B*B*B*B-B-0.2)>=0){
-        cout<<"no roots"<<'\n';
+        cout<<"no roots";
         return 1;
     }
+
     do{
-        //Формула метода хорд:
-        //x =(A*F(B)-B*F(A))/((F(B)-F(A))
-        D=((A*fB)-(B*fA))/(fB-fA);
-        double fD = D*D*D*D*D -D -0.2
-        if(fabs(fD),eps){
+        //Формула метода хорд: x =(A*F(B)-B*F(A))/((F(B)-F(A))
+        D = (((A*(B*B*B*B*B - B - 0.2))-(B*(A*A*A*A*A - A - 0.2)))/((B*B*B*B*B - B - 0.2)-(A*A*A*A*A - A - 0.2)));
+        double fD = D*D*D*D*D - D - 0.2;
+        if(fabs(fD) < eps){
             break;
         }
-        if(fA*fD<0){
+        if((A*A*A*A*A - A - 0.2)*(B*B*B*B*B - B - 0.2)<0){
             B=D;
         }
         else{
